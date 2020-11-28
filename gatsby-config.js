@@ -42,7 +42,7 @@ module.exports = {
       resolve: `gatsby-transformer-remark`
     },
     {
-      reslove: `gatsby-plugin-postcss`
+      resolve: `gatsby-plugin-postcss`
     }
   ],
 }
