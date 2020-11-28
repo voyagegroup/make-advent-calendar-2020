@@ -18,10 +18,10 @@ develop:
 	npx --no-install gatsby develop --host=0.0.0.0 --port=8000
 
 build:
-	npx --no-install gatsby build
+	npx --no-install gatsby build --prefix-paths
 
 serve:
-	npx --no-install gatsby serve --host=0.0.0.0 --port=8000
+	npx --no-install gatsby serve --host=0.0.0.0 --port=8000 --prefix-paths
 
 public: docs
 	ln -s $< $@
