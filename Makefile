@@ -20,7 +20,7 @@ build:
 	npx --no-install gatsby build
 
 serve:
-	npx --no-install gatsby serve
+	npx --no-install gatsby serve --host=0.0.0.0 --port=8000
 
 clean:
 	rm -rf node_modules
