@@ -4,11 +4,12 @@ help:
 	@cat $(firstword $(MAKEFILE_LIST))
 
 setup: \
-	dependencies
+	dependencies \
+	public
 
 dependencies:
-	type node
-	type npm
+	which node
+	which npm
 
 install:
 	npm install
@@ -21,6 +22,9 @@ build:
 
 serve:
 	npx --no-install gatsby serve --host=0.0.0.0 --port=8000
+
+public: docs
+	ln -s $< $@
 
 clean:
 	rm -rf node_modules
