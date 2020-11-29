@@ -1,6 +1,6 @@
 ---
 slug: "/01-makefile-in-2020"
-date: "2018-12-01"
+date: "2020-12-01"
 title: "2020年の Makefile"
 ---
 
@@ -11,12 +11,12 @@ title: "2020年の Makefile"
 `make` は元々は C言語などのソースコードをビルドするために生まれたツールです。
 ですが、最近では半ばタスクランナー的な用途（※1）に `make` を用いることがあります。
 
-年を追うごとに本来の用途としての出番が減る一方で、2012年ごろから私の周囲でタスクランナー的に使う人がちらほら出始め、
+年を追うごとに本来の用途としての出番が減る一方で、2012年ごろから私の周囲ではタスクランナー的に使う人がちらほら出始め、
 Go言語圏で流行ったこともあり2015年ごろから世間的にも認知されるようになった気がします。
 
 ## Makefile とは
 
-タスクランナー的な `make` の用途には本来のビルドツールとしての使い方の知識は必要ありません。
+タスクランナー的な `make` の用途には本来のビルドツールとしての使い方の知識はほとんど必要ありません。
 `Makefile` はこのような「ルール（[Rule](https://www.gnu.org/software/make/manual/html_node/Rules.html)）」で構成されます。
 
 ```makefile
@@ -72,9 +72,19 @@ make
 
 このように....
 
+## 実装の種別とインストール
+
+`make` は歴史が長いだけあっていくつか実装が存在します。主な実装に「[GNU make](https://www.gnu.org/software/make/)」「[BSD make](https://www.freebsd.org/doc/en/books/developers-handbook/tools-make.html)」「[System V make](https://www.linux.co.cr/unix/review/1983/0806-a.html#:~:text=4.1%20%20Make)」があります。
+
+それぞれ細かな差があり、同じ `Makefile` でも同様に動かないことがほとんどです。入手のしやすさなどから `GNU make` が多く使われていて、BSD系[?] の macOS ですら `GNU make` が標準でインストールされていることから、
+タスクランナー的な用途の文脈での `make` は `GNU make` のことを指します。
+
+macOS では標準でインストールされているものを使うか Home brew 経由で、Linux では各ディストリビューションのパッケージマネージャ経由で、Windows では [Make for Windows](http://gnuwin32.sourceforge.net/packages/make.htm) または [MinGW](http://www.mingw.org/wiki/InstallationHOWTOforMinGW) からインストールできます（Windows は未確認）。ただ、Windows は現代では WSL2 の環境を整えた方がよさそうです。
+
+
 ## 参考
 
 * [Golang: Don’t afraid of makefiles - Radomir Sohlich](https://sohlich.github.io/post/go_makefile/)
 * [aws/aws-sdk-php/Makefile](https://github.com/aws/aws-sdk-php/blob/405a5c130bd18ccb63a653b643266ed2ab9e1147/Makefile)
 
-※1. 「ベターシェルスクリプト」「実行可能なドキュメント」「読める実行ファイル」などの形容がありますが未だになんと読んだらいいのか個人的に決めかねています。なんて呼んだらいいんですかね
+※1. Phony Target を多様したり、プログラムをビルドする以外の目的で `Makefile` を書くといった用途。「ベターシェルスクリプト」「実行可能なドキュメント」「読める実行ファイル」などの形容がありますが未だになんと読んだらいいのか個人的に決めかねています。なんて呼んだらいいんですかね
