@@ -14,7 +14,7 @@ const IndexPage = () => {
         edges {
           node {
             frontmatter {
-              date(formatString: "D")
+              date(formatString: "MMMM DD, YYYY")
               slug
               title
             }
@@ -26,7 +26,10 @@ const IndexPage = () => {
   `)
 
   const rows = [...new Array(31)].map((_, index) => (
-    result.allMarkdownRemark.edges.find(row => index + 1 === parseInt(row.node.frontmatter.date))
+    result.allMarkdownRemark.edges.find(row => {
+      const date = new Date(row.node.frontmatter.date)
+      return index+1 === date.getDate() && 2020 === date.getFullYear()
+    })
   ))
 
   return (
@@ -52,7 +55,7 @@ const IndexPage = () => {
             <Link to={row.node.frontmatter.slug}>
               <h2 className="font-semibold">
                 <span className="lg:block text-bold text-red-500 pr-2">
-                  {row.node.frontmatter.date}
+                  {(new Date(row.node.frontmatter.date)).getDate()}
                 </span>
                 {row.node.frontmatter.title}
               </h2>
