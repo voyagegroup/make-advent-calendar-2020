@@ -10,10 +10,10 @@ const Header = ({ siteTitle }) => (
           to="/"
           className="overflow-hidden w-10 md:w-auto"
         >
-          <h1 className="text-3xl">
+          <h1 className="text-4xl font-bold">
             {siteTitle}
           </h1>
-          <p className="text-xs text-bold text-gray-500">advent calendar 2020</p>
+          <p className="text-sm text-bold text-gray-500">advent calendar 2020</p>
         </Link>
       </div>
       <div></div>
