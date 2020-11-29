@@ -1,14 +1,10 @@
 import React from "react"
 import { Link } from "gatsby"
-import tw, { styled } from "twin.macro"
+
 
 import Layout from "../components/layout"
 import Image from "../components/image"
 import SEO from "../components/seo"
-
-const Button = styled.button`
-  ${tw`bg-blue-500 hover:bg-blue-800 text-white p-2 rounded`}
-`
 
 const IndexPage = () => (
   <Layout>
@@ -21,7 +17,6 @@ const IndexPage = () => (
     </div>
     <Link to="/page-2/">Go to page 2</Link> <br />
     <Link to="/using-typescript/">Go to "Using TypeScript"</Link>
-    <Button>Activate</Button>
   </Layout>
 )
 
