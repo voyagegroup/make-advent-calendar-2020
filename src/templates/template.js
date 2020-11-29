@@ -18,14 +18,13 @@ export default function Template(props) {
   const next = pageContext.nodes[index + 1]
     ? pageContext.nodes[index + 1].node
     : null
-  console.log(pageContext)
 
   return (
     <>
       <Header siteTitle="Makefile" />
       <main className="w-full mx-auto grid grid-cols-12 grid-flow-col gap-4">
         <section className="col-span-2 lg:block hidden">
-          <Sidebar />
+          <Sidebar nodes={ pageContext.nodes } />
         </section>
         <section className="col-span-10 lg:max-w-4xl">
           <article>
