@@ -1,5 +1,5 @@
 ---
-slug: "/01-makefile-in-2020"
+slug: "/001-makefile-in-2020"
 date: "2020-12-01"
 title: "2020年の Makefile"
 ---
