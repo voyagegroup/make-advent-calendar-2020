@@ -2,7 +2,7 @@ import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
 
-const Header = ({title, subTitle}) => (
+const Header = ({title}) => (
   <header>
     <div className="grid grid-cols-2 sticky top-0 z-40 lg:z-50 w-full max-w-8xl mx-auto bg-white border-b border-gray-200">
       <div className="pl-4 sm:p-6 items-center lg:border-b-0">
