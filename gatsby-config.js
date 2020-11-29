@@ -1,9 +1,10 @@
 module.exports = {
   pathPrefix: `/make-advent-calendar-2020`,
   siteMetadata: {
-    title: `Gatsby Default Starter`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
+    title: `Makefile`,
+    subTitle: `advent calendar 2020`,
+    description: `GNU Make、43才。内向的で人づきあいが苦手という以外は全く普通のプログラムだったはず。外見はそっくりだけれども予想外の用途の出現。その周りで起こる不可思議な事件は切り離されていたはずの伝統的ビルドオートメーションの世界とウェブ開発の世界の境が崩れ始める予兆。引き込まれて戻れなくなる、カルティック･サイコホラー。`,
+    author: `volunteers`,
   },
   plugins: [
     {

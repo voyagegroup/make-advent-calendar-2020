@@ -4,8 +4,6 @@ NAME := tamakiii/make-advent-calendar-2020
 USER := node
 PORT_HTTP_HOST := 8000
 PORT_HTTP_GUEST := 8000
-PORT_SOCKET_IO_HOST := 36543
-PORT_SOCKET_IO_GUEST := 36543
 
 help:
 	@cat $(firstword $(MAKEFILE_LIST))
@@ -24,7 +22,6 @@ bash:
 		--network=bridge \
 		-u $(USER) \
 		-p $(PORT_HTTP_HOST):$(PORT_HTTP_GUEST) \
-		-p $(PORT_SOCKET_IO_HOST):$(PORT_SOCKET_IO_GUEST) \
 		-v $(PWD):/work \
 		-w /work \
 		$(NAME) $@

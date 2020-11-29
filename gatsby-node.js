@@ -8,7 +8,7 @@
 
 exports.createPages = async ({ actions, graphql, reporter }) => {
   const { createPage } = actions
-  const template = require.resolve(`./src/templates/template.js`)
+  const template = require.resolve(`./src/templates/markdown.js`)
   const result = await graphql(`
     {
       allMarkdownRemark(
@@ -19,24 +19,30 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
           node {
             frontmatter {
               slug
+              title
             }
           }
         }
       }
     }
   `)
+
   // Handle errors
   if (result.errors) {
     reporter.panicOnBuild(`Error while running GraphQL query.`)
     return
   }
-  result.data.allMarkdownRemark.edges.forEach(({ node }) => {
+
+  const nodes = result.data.allMarkdownRemark.edges;
+  nodes.forEach(({ node, index }) => {
     createPage({
       path: node.frontmatter.slug,
       component: template,
       context: {
         // additional data can be passed via context
         slug: node.frontmatter.slug,
+        index,
+        nodes,
       },
     })
   })
