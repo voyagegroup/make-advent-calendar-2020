@@ -11,7 +11,7 @@ const Header = ({ siteTitle }) => (
           className="overflow-hidden w-10 md:w-auto"
         >
           <h1 className="text-4xl font-bold">
-            {siteTitle}
+            Makefile
           </h1>
           <p className="text-sm text-bold text-gray-500">advent calendar 2020</p>
         </Link>

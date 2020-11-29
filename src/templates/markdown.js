@@ -3,6 +3,7 @@ import { graphql } from "gatsby"
 import Header from "../components/header"
 import Sidebar from "../components/sidebar"
 import Footer from "../components/article/footer"
+import Layout from "../components/layout"
 
 export default function Template(props) {
   const data = props.data
@@ -11,9 +12,8 @@ export default function Template(props) {
   const { frontmatter, html } = markdownRemark
 
   return (
-    <>
-      <Header siteTitle="Makefile" />
-      <main className="w-full mx-auto grid grid-cols-12 grid-flow-col gap-4">
+    <Layout>
+      <section className="w-full mx-auto grid grid-cols-12 grid-flow-col gap-4">
         <section className="col-span-2 lg:block hidden">
           <Sidebar nodes={ pageContext.nodes } />
         </section>
@@ -29,8 +29,8 @@ export default function Template(props) {
           </article>
           <Footer pageContext={pageContext} />
         </section>
-      </main>
-    </>
+      </section>
+    </Layout>
   )
 }
 
