@@ -39,7 +39,6 @@
   @apply text-blue-600;
 }
 
-
 .markdown > p {
   @apply mb-4;
 }
@@ -49,10 +48,20 @@
 }
 
 .markdown ul {
-  @apply list-disc mb-8;
+  @apply list-disc pl-6;
+}
+.markdown > ul {
+  @apply mb-8;
 }
 
 .markdown ol {
   @apply list-decimal mb-8;
 }
 
+.markdown hr {
+  @apply mb-4;
+}
+
+.markdown code.language-text {
+  @apply text-red-700;
+}

@@ -1,0 +1,80 @@
+---
+slug: "/01-makefile-in-2020"
+date: "2018-12-01"
+title: "2020年の Makefile"
+---
+
+# 2020年の Makefile
+
+## make の歴史
+
+`make` は元々は C言語などのソースコードをビルドするために生まれたツールです。
+ですが、最近では半ばタスクランナー的な用途（※1）に `make` を用いることがあります。
+
+年を追うごとに本来の用途としての出番が減る一方で、2012年ごろから私の周囲でタスクランナー的に使う人がちらほら出始め、
+Go言語圏で流行ったこともあり2015年ごろから世間的にも認知されるようになった気がします。
+
+## Makefile とは
+
+タスクランナー的な `make` の用途には本来のビルドツールとしての使い方の知識は必要ありません。
+`Makefile` はこのような「ルール（[Rule](https://www.gnu.org/software/make/manual/html_node/Rules.html)）」で構成されます。
+
+```makefile
+target ... : prerequisites ...
+    command
+    ...
+```
+
+`target` は、通常ファイルの名称ですが、例えば `install` のように動作を表すこともあります。適当な名前をつけられるわけです。
+このようなターゲットは 「偽のターゲット（[Phony Target](https://www.gnu.org/software/make/manual/html_node/Phony-Targets.html)）」と呼ばれ、`.PHONY:` で指定されますが、ここでは一旦忘れましょう。
+
+`prerequisites` はターゲットを作るときの入力として用いられる「前提条件（[Prerequisites](https://www.gnu.org/software/make/manual/html_node/Automatic-Prerequisites.html)）」です。ここでは一旦忘れましょう。
+
+`command` はシェルスクリプトです。通常 `/bin/sh` がデフォルトシェルとして設定されているはずです。
+
+---
+
+`target` と `command` を持つ簡単な `Makefile` を書いてみます。
+`command` には複数のコマンドが書けます。
+```makefile
+hello:
+	echo "hello"
+    echo "make"
+```
+
+この `Makefile` があるディレクトリで `make hello` を実行すると、このように `command` の内容と `hello` `make` が出力されます。
+```shell
+$ ls Makefile
+Makefile
+```
+```shell
+$ make hello
+echo "hello"
+hello
+echo "make"
+make
+
+```
+
+`make` は `command` に特別な指定をしない限り `command` も出力します。これは不便なように思われるかもしれませんが、
+`Makefile` が複雑化した際、何を実行しているのかがこのおかげで一目瞭然でになり、その利点の方が遥かに勝ります。
+気にせずそういうものだと一旦思いましょう。
+
+`target` と `command` でルールを書く方法がわかりました。
+あとは自動化したい処理を思うように書くだけです。例えば、こんな感じです。
+* Go言語のプログラムを `build` して `test` する
+* `npm` モジュールを `install` して `clean` する
+* 開発環境用の設定ファイルを `setup` する
+* プロビジョニングツールとして使う（`apt-get install -y ...`）
+
+こういった手順を `Makefile` として書いてやれば、他のマシン上でも同様の手順が再現できます。
+開発環境上で実行している多少複雑なテスト手順を、CI で同じように実行する、といったことができます。便利ですね。
+
+このように....
+
+## 参考
+
+* [Golang: Don’t afraid of makefiles - Radomir Sohlich](https://sohlich.github.io/post/go_makefile/)
+* [aws/aws-sdk-php/Makefile](https://github.com/aws/aws-sdk-php/blob/405a5c130bd18ccb63a653b643266ed2ab9e1147/Makefile)
+
+※1. 「ベターシェルスクリプト」「実行可能なドキュメント」「読める実行ファイル」などの形容がありますが未だになんと読んだらいいのか個人的に決めかねています。なんて呼んだらいいんですかね
