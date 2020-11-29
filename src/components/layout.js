@@ -17,7 +17,8 @@ const Layout = ({ children }) => {
     query SiteTitleQuery {
       site {
         siteMetadata {
-          title
+          title,
+          subTitle
         }
       }
     }
@@ -25,7 +26,7 @@ const Layout = ({ children }) => {
 
   return (
     <div className="min-h-screen">
-      <Header />
+      <Header title={data.site.siteMetadata?.title} subTitle={data.site.siteMetadata?.subTitle} />
       <main>{children}</main>
       <footer className="bottom-0 h-8 bg-emerald-500 text-sm items-center justify-center">
         <p className="text-center">
