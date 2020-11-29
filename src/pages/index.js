@@ -44,7 +44,7 @@ const IndexPage = () => {
             <h2 className="text-gray-200">{index+29}</h2>
           </article>
         ))}
-        {rows.map((row, index) => (row && (
+        {rows.map((row, index) => (row ? (
           <article
             key={index}
             className="p-4 rounded-md shadow"
@@ -58,7 +58,7 @@ const IndexPage = () => {
               </h2>
             </Link>
           </article>
-        ) || (
+        ) : (
           <article key={index} className="p-4 rounded-md shadow">
             <span className="text-bold text-gray-300">{index+1}</span>
           </article>
