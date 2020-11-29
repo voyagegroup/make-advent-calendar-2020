@@ -7,3 +7,4 @@ title: "My first blog post"
 ## hello
 
 これはテストですはろーはろー
+![image](./philosophical-gnu-sm.jpg)
