@@ -2,11 +2,17 @@ import React from "react"
 import { Link, graphql } from "gatsby"
 import Header from "../components/header"
 
-export default function Template({
-  data, // this prop will be injected by the GraphQL query below.
-}) {
+export default function Template(props) {
+  const data = props.data
+  const pageContext = props.pageContext
   const { markdownRemark } = data // data.markdownRemark holds your post data
   const { frontmatter, html } = markdownRemark
+
+  const index = pageContext.nodes.findIndex((row) => row.node.frontmatter.slug === pageContext.slug)
+  const prev = pageContext.nodes[index - 1] ? pageContext.nodes[index - 1].node : null
+  const next = pageContext.nodes[index + 1] ? pageContext.nodes[index + 1].node : null
+  console.log(pageContext)
+
   return (
     <>
       <Header siteTitle="Makefile" />
@@ -64,6 +70,36 @@ export default function Template({
             </div>
           </article>
         </section>
+        {(prev || next) && (
+          <nav>
+            <ul
+              className="flex flex-wrap justify-between mb-8"
+            >
+              <li>
+                {prev && (
+                  <Link
+                    className="text-blue-600"
+                    to={prev.frontmatter.slug}
+                    rel="prev"
+                  >
+                    ← {prev.frontmatter.title}
+                  </Link>
+                )}
+              </li>
+              <li>
+                {next && (
+                  <Link
+                    className="text-blue-600"
+                    to={next.frontmatter.slug}
+                    rel="next"
+                  >
+                    {next.frontmatter.title} →
+                  </Link>
+                )}
+              </li>
+            </ul>
+          </nav>
+        )}
       </main>
     </>
   )
