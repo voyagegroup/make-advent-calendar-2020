@@ -16,7 +16,7 @@ Go言語圏で流行ったこともあり2015年ごろから世間的にも認�
 
 ## Makefile とは
 
-タスクランナー的な `make` の用途には本来のビルドツールとしての使い方の知識はほとんど必要ありません。
+タスクランナー的な `make` の用途には、本来のビルドツールとしての使い方の知識はほとんど必要ありません。
 `Makefile` はこのような「ルール（[Rule](https://www.gnu.org/software/make/manual/html_node/Rules.html)）」で構成されます。
 
 ```makefile
@@ -57,13 +57,12 @@ make
 ```
 
 `make` は `command` に特別な指定をしない限り `command` も出力します。これは不便なように思われるかもしれませんが、
-`Makefile` が複雑化した際、何を実行しているのかがこのおかげで一目瞭然でになり、その利点の方が遥かに勝ります。
-気にせずそういうものだと一旦思いましょう。
+`Makefile` の記述量が増えた際、何を実行しているのかが一目瞭然で、その利点の方が遥かに勝ります。
 
 `target` と `command` でルールを書く方法がわかりました。
-あとは自動化したい処理を思うように書くだけです。例えば、こんな感じです。
+あとは自動化したい処理を思うように書くだけです。例えばこんな感じです。
 * Go言語のプログラムを `build` して `test` する
-* `npm` モジュールを `install` して `clean` する
+* `npm` パッケージを `install` して `clean` する
 * 開発環境用の設定ファイルを `setup` する
 * プロビジョニングツールとして使う（`apt-get install -y ...`）
 
@@ -78,7 +77,7 @@ make
 それぞれ細かな差があり、同じ `Makefile` でも同様に動かないことがほとんどです。入手のしやすさなどから `GNU make` が多く使われていて、BSD系[?] の macOS ですら `GNU make` が標準でインストールされていることから、
 タスクランナー的な用途の文脈では `make` は `GNU make` のことを指します。
 
-macOS では標準でインストールされているものを使うか Home brew 経由で、Linux では各ディストリビューションのパッケージマネージャ経由で、Windows では [Make for Windows](http://gnuwin32.sourceforge.net/packages/make.htm) や [MinGW](http://www.mingw.org/wiki/InstallationHOWTOforMinGW) からインストールできます（Windows は未確認）。ただ、Windows は現代では WSL2 の環境を整えた方がよさそうです。
+macOS では標準でインストールされているものを使うか Home brew 経由で、Linux では各ディストリビューションのパッケージマネージャ経由で、Windows では [Make for Windows](http://gnuwin32.sourceforge.net/packages/make.htm) や [MinGW](http://www.mingw.org/wiki/InstallationHOWTOforMinGW) からインストールできます。ただ、Windows は現代では WSL2 の環境を整えた方がよさそうです。
 
 
 ## 参考
@@ -87,6 +86,6 @@ macOS では標準でインストールされているものを使うか Home br
 * [aws/aws-sdk-php/Makefile](https://github.com/aws/aws-sdk-php/blob/405a5c130bd18ccb63a653b643266ed2ab9e1147/Makefile)
 
 
-※1. Phony Target を多様したり、プログラムをビルドする以外の目的で `Makefile` を書くといった用途。「ベターシェルスクリプト」「実行可能なドキュメント」「読める実行ファイル」などの形容がありますが未だになんと呼んだらいいのか個人的に決めかねています。なんて呼んだらいいんですかね
+※1. Phony Target を多様したり、プログラムをビルドする以外の目的で `Makefile` を書くといった用途。「ベターシェルスクリプト」「実行可能なドキュメント」「読める実行ファイル」「メタ的な Makefile」などの形容がありますが未だになんと呼んだらいいのか個人的に決めかねています。なんて呼んだらいいんですかね
 
 ※2. [Google Trend 調べ](https://trends.google.co.jp/trends/explore?date=all&q=makefile)。`make` は今でもさまざまなオープンソースプロジェクトで使われていて、`Autotools` や `Automake` などの知識があると探索がはかどります
