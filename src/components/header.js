@@ -13,6 +13,7 @@ const Header = ({ siteTitle }) => (
           <h1 className="text-3xl">
             {siteTitle}
           </h1>
+          <p className="text-xs text-bold text-gray-500">advent calendar 2020</p>
         </Link>
       </div>
       <div className="flex-auto h-18 flex items-center justify-between px-4 sm:px-6 lg:mx-6 lg:px-0 xl:mx-8"></div>

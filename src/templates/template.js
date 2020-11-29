@@ -10,16 +10,16 @@ export default function Template({
   return (
     <>
       <Header siteTitle="Makefile" />
-      <section className="w-full max-w-8xl mx-auto">
+      <main className="w-full max-w-8xl mx-auto">
         <section className="lg:flex">
           <div
-            className="fixed z-40 inset-0 flex-none h-full bg-black bg-opacity-25 w-full lg:bg-white lg:static lg:h-auto lg:overflow-y-visible lg:pt-0 lg:w-60 xl:w-72 lg:block hidden"
+            className="fixed z-40 inset-0 flex-none h-full bg-black w-full lg:bg-white lg:static lg:h-auto lg:overflow-y-visible lg:pt-0 lg:w-60 lg:block hidden"
           >
             <div
               className="h-full overflow-y-auto scrolling-touch lg:h-auto lg:block lg:relative lg:sticky lg:bg-transparent overflow-hidden lg:top-18 bg-white mr-24 lg:mr-0"
             >
               <nav
-                className="px-1 pt-6 overflow-y-auto font-medium text-base sm:px-3 xl:px-5 lg:text-sm pb-10 lg:pt-10 lg:pb-16 sticky?lg:h-(screen-18)"
+                className="px-1 pt-6 overflow-y-auto font-medium text-base sm:px-3 lg:text-sm pb-10 lg:pt-10 lg:pb-16 sticky?lg:h-(screen-18)"
               >
                 <ul>
                   <h5 className="px-3 mb-3 lg:mb-3 uppercase tracking-wide font-semibold text-sm lg:text-xs text-gray-900">
@@ -57,19 +57,14 @@ export default function Template({
               </nav>
             </div>
           </div>
-          <main className="min-w-0 w-full flex-auto lg:static lg:max-h-full lg:overflow-visible">
-            <div className="pt-10 pb-24 lg:pb-16 w-full">
-              <div className="pb-10">
-                <div className="flex items-center">
-                  <h1 className="text-3xl font-extrabold text-gray-900 tracking-tight">{frontmatter.title}</h1>
-                </div>
-                <h2 className="mt-1 text-lg text-gray-500">{frontmatter.date}</h2>
-              </div>
-              <div className="" dangerouslySetInnerHTML={{ __html: html }} />
+          <article className="min-w-0 w-full flex-auto lg:static lg:max-h-full lg:overflow-visible">
+            <div className="px-6 py-4 lg:py-8 lg:max-w-4xl">
+              <p className="mt-1 text-sm text-gray-500">{frontmatter.date}</p>
+              <div className="markdown" dangerouslySetInnerHTML={{ __html: html }} />
             </div>
-          </main>
+          </article>
         </section>
-      </section>
+      </main>
     </>
   )
 }
