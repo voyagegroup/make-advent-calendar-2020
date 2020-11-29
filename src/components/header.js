@@ -10,10 +10,9 @@ const Header = ({title, subTitle}) => (
           to="/"
           className="overflow-hidden w-10 md:w-auto"
         >
-          <h1 className="text-4xl font-bold">
+          <h1 className="text-2xl">
             {title}
           </h1>
-          <p className="text-sm text-bold text-gray-500">{subTitle}</p>
         </Link>
       </div>
       <div></div>

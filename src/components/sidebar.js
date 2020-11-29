@@ -10,7 +10,7 @@ const Sidebar = ({ nodes }) => (
           <li key={index}>
             <Link
               className="py-2 transition-colors duration-200 relative block hover:text-gray-900 text-gray-500"
-              href={row.node.frontmatter.slug}
+              to={row.node.frontmatter.slug}
             >
               <p>{row.node.frontmatter.title}</p>
             </Link>
