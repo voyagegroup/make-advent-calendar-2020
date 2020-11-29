@@ -1,6 +1,6 @@
 ---
-slug: "/02-c-option"
-date: "2018-12-01"
+slug: "/002-c-option"
+date: "2018-12-03"
 title: "-C オプション"
 ---
 
@@ -10,7 +10,7 @@ title: "-C オプション"
 
 試しに `make -C 02-c-option hello` を実行してみると、
 
-```
+```makefile
 echo hello!
 hello!
 pwd

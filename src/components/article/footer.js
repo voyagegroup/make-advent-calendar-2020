@@ -17,7 +17,7 @@ const Footer = ({ pageContext }) => {
   }
 
   return (
-    <section className="min-w-0 w-full col-span-2 px-8 lg:static lg:max-h-full lg:overflow-visible">
+    <section className="min-w-0 w-full col-span-2 sm:px-2">
       <nav>
         <ul className="flex flex-wrap justify-between mb-8">
           <li>
