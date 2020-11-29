@@ -6,16 +6,28 @@ module.exports = {
     author: `@gatsbyjs`,
   },
   plugins: [
-    `gatsby-plugin-react-helmet`,
+    {
+      resolve: `gatsby-plugin-react-helmet`,
+    },
     {
       resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `images`,
-        path: `${__dirname}/src/images`,
-      },
+      options: [
+        {
+          name: `images`,
+          path: `${__dirname}/src/images`,
+        },
+        {
+          name: `markdown-pages`,
+          path: `${__dirname}/article`
+        }
+      ],
     },
-    `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
+    {
+      resolve: `gatsby-transformer-sharp`,
+    },
+    {
+      resolve: `gatsby-plugin-sharp`,
+    },
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
@@ -26,26 +38,13 @@ module.exports = {
         theme_color: `#663399`,
         display: `minimal-ui`,
         icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
-      },
+        },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
     {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `markdown-pages`,
-        path: `${__dirname}/article`
-      }
-    },
-    {
-      resolve: `gatsby-transformer-remark`
-    },
-    {
       resolve: `gatsby-plugin-postcss`
-    },
-    {
-      resolve: `gatsby-plugin-sharp`,
     },
     {
       resolve: `gatsby-transformer-remark`,

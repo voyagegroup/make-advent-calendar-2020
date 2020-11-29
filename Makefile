@@ -1,4 +1,4 @@
-.PHONY: help setup install develop build serve clean
+.PHONY: help setup dependencies install develop build serve clean
 .PHONY: public
 
 help:
@@ -22,9 +22,6 @@ build: \
 
 serve:
 	npx --no-install gatsby serve --host=0.0.0.0 --port=8000 --prefix-paths
-
-publish: public
-	npx --no-install gh-pages -d public
 
 public:
 	npx --no-install gatsby build --prefix-paths
