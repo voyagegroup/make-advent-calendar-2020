@@ -25,10 +25,10 @@ target ... : prerequisites ...
     ...
 ```
 
-`target` は、通常ファイルの名称ですが、例えば `install` のように動作を表すこともあります。適当な名前をつけられるわけです。
+`target` は通常はファイルの名称ですが、`install` のように動作を表すこともあります。適当な名前をつけられるわけです。
 このようなターゲットは 「偽のターゲット（[Phony Target](https://www.gnu.org/software/make/manual/html_node/Phony-Targets.html)）」と呼ばれ、`.PHONY:` で指定されますが、ここでは一旦忘れましょう。
 
-`prerequisites` はターゲットを作るときの入力として用いられる「前提条件（[Prerequisites](https://www.gnu.org/software/make/manual/html_node/Automatic-Prerequisites.html)）」です。ここでは一旦忘れましょう。
+`prerequisites` はターゲットを作るときの入力として用いられる「必要条件（[Prerequisites](https://www.gnu.org/software/make/manual/html_node/Automatic-Prerequisites.html)）」です。ここでは一旦忘れましょう。
 
 `command` はシェルスクリプトです。通常 `/bin/sh` がデフォルトシェルとして設定されているはずです。
 
