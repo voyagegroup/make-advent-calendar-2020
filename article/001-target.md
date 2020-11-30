@@ -37,7 +37,7 @@ target ... : prerequisites ...
 
 `prerequisites` はターゲットを作るときの入力として用いられる「必要条件（[Prerequisites](https://www.gnu.org/software/make/manual/html_node/Automatic-Prerequisites.html)）」です。今回は使わないので一旦忘れましょう。
 
-`command` は `echo ".."` や `cat .. | sed ..` などのコマンドです（※4）。
+`command` は `echo ...` や `cat ... | sed ...` などのコマンドです（※4）。
 
 ---
 
