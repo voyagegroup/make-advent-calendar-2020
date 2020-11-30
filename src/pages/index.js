@@ -56,7 +56,7 @@ const IndexPage = () => {
           >
             <Link to={row.node.frontmatter.slug}>
               <h2 className="font-semibold">
-                <span className="lg:block text-bold text-red-500 pr-2">
+                <span className="lg:block text-bold text-red-500 pr-4 lg:pr-2">
                   {(new Date(row.node.frontmatter.date)).getDate()}
                 </span>
                 {row.node.frontmatter.title}
