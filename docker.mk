@@ -1,6 +1,6 @@
 .PHONY: help setup dependencies bash clean
 
-NAME := tamakiii/make-advent-calendar-2020
+NAME := voyagegroup/make-advent-calendar-2020
 USER := node
 PORT_HTTP_HOST := 8000
 PORT_HTTP_GUEST := 8000
