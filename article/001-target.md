@@ -45,7 +45,7 @@ target ... : prerequisites ...
 ```makefile
 hello:
 	echo "hello, weird"
-    pwd
+	pwd
 ```
 
 この `Makefile` があるディレクトリで `make hello` を実行すると、`command` の内容とそれらの実行結果が出力されます。
