@@ -37,8 +37,8 @@ const IndexPage = () => {
       <SEO title="Home" />
       <section className="px-6 pt-6">
         <p>GitHub</p>
-        <Link href="https://github.com/tamakiii/make-advent-calendar-2020">
-          <p className="text-xs text-gray-500">https://github.com/tamakiii/make-advent-calendar-2020</p>
+        <Link href="https://github.com/voyagegroup/make-advent-calendar-2020">
+          <p className="text-xs text-gray-500">https://github.com/voyagegroup/make-advent-calendar-2020</p>
         </Link>
       </section>
       <section className="w-screen lg:w-5/6 px-6 py-8 grid grid-cols-1 lg:grid-flow-row lg:grid-cols-7 lg:grid-rows-5 gap-4">

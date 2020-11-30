@@ -9,6 +9,15 @@
   open "http://localhost:8000/
   ```
 
+  or
+
+  ```shell
+  make -f docker.mk setup
+  make -f docker.mk build
+  make -f docker.mk bash
+  # and make setup install develop
+  ```
+
 1. **Build & Serve**
 
   ```shell
@@ -20,6 +29,6 @@
 ## 💫 Deploy
 
 ```shell
-# merge PR and
-open "https://github.com/tamakiii/make-advent-calendar-2020/actions"
+# merge PR to master and
+open "https://github.com/voyagegroup/make-advent-calendar-2020/actions"
 ```
