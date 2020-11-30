@@ -1,3 +1,3 @@
 hello:
-	echo "hello"
-	echo "make"
+	echo "hello, weird"
+	pwd

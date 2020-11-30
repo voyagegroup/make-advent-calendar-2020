@@ -13,7 +13,7 @@ const Footer = ({ pageContext }) => {
     : null
 
   if (!prev && !next) {
-    return
+    return (<></>)
   }
 
   return (

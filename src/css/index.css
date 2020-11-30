@@ -63,5 +63,5 @@
 }
 
 .markdown code.language-text {
-  @apply text-red-700;
+  @apply text-gray-900 bg-gray-100;
 }
