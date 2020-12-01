@@ -13,7 +13,7 @@ title: "偽のターゲットと前提条件"
 ## up to date
 
 陥りやすい落とし穴のひとつが `up to date` です。
-たとえばこの Makefile は `make install` すると当然 `command` を出力します。
+この Makefile は `make install` すると当然 `command` を出力します。
 ```makefile
 install:
 	echo "hello" > install
@@ -27,7 +27,7 @@ $ cat install
 hello
 ```
 
-しかしここで再度 `make install` するとどうでしょうか。
+しかし、ここで再度 `make install` するとどうでしょうか。
 `make: 'install' is up to date.` となってしまい、`command` が実行されません。これはどういうことでしょうか？
 ```shell
 $ make install
@@ -35,7 +35,7 @@ make: 'install' is up to date.
 ```
 
 make はターゲット名と同名のファイルが存在すると、既に成果物の生成が済んでいて再実行が不要と判断してコマンドを実行しません。
-そのため、例えば `test` ディレクトリがあるプロジェクトで `make test` をしたくても `up to date` になってしまうわけです。
+そのため、例えば `test` ディレクトリがあるプロジェクトで `make test` をしたくても `up to date` になってしまう、といったことがあります。
 
 ---
 
@@ -44,7 +44,7 @@ make はターゲット名と同名のファイルが存在すると、既に成
 
 こうした「成果物の生成に関わらないターゲット」を書くにはどうしたらいいでしょう？
 
-答えは、ターゲットを「偽のターゲット（[Phony Target](https://www.gnu.org/software/make/manual/html_node/Phony-Targets.html)）」にすることです。
+答えは、`PHONY:` を用いてターゲットを「偽のターゲット（[Phony Target](https://www.gnu.org/software/make/manual/html_node/Phony-Targets.html)）」にすることです。
 ```makefile
 .PHONY: install
 
@@ -67,13 +67,13 @@ echo "hello" > install
 本来のビルドツールとしての使い方をする場合にも、同様に `PHONY:` を書くかというと、そうではありません。
 
 これは C言語のプログラムをビルドする Makefile の例です。
-`main.o: main.c` の `:` の右側が「必要条件（[Prerequisites](https://www.gnu.org/software/make/manual/html_node/Automatic-Prerequisites.html)）」です。
+`main.o: main.c` の `:` の右側 `main.c` が「必要条件（[Prerequisites](https://www.gnu.org/software/make/manual/html_node/Automatic-Prerequisites.html)）」です。
 ```makefile
 main.o: main.c
 	gcc -o main.o main.c
 ```
 
-このように必要条件が設定されている場合も、`main.o` が生成されると `up-to-date` になります。
+このように必要条件が設定されている場合も、`main.o` が生成されると `up to date` になりますが、
 ```shell
 $ make main.o
 gcc -o main.o main.c
@@ -83,7 +83,7 @@ $ make main.o
 make: 'main.o' is up to date.
 ```
 
-しかし、必要条件のタイムスタンプが更新されると「成果物の再生成が必要」と判断してコマンドを実行します。
+必要条件のタイムスタンプが更新されると make は「成果物の再生成が必要」と判断してコマンドを実行します。
 ```shell
 $ touch main.c
 $ make main.o
