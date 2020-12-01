@@ -29,8 +29,8 @@ Go言語圏で流行ったこともあり2015年ごろから世間的にも認�
 
 ```makefile
 target ... : prerequisites ...
-    command
-    ...
+	command
+	...
 ```
 
 `target` は通常はファイルの名称ですが、`install` のように動作を表すこともあります。適当な名前をつけられるわけです（※3）。
