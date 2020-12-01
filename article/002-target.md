@@ -79,20 +79,3 @@ install:
 test:
 	echo "no test yet"
 ```
-
-<!--
-ここで本来の make の用途である C言語のプログラムをビルドする簡単な Makefile の例を見てみましょう。
-`main.o` というターゲットを作る `gcc main.c -o main.o` というコマンドですね。
-```makefile
-main.o:
-	gcc main.c -o main.o
-```
-```shell
-$ make main.o
-gcc main.c -o main.o
-make: 'main.o' is up to date.
-$ ./main.o
-Hello, World
-```
-
--->
