@@ -12,15 +12,15 @@
 }
 
 .markdown > h1 {
-  @apply font-semibold text-3xl mt-4 mb-2;
+  @apply font-semibold text-3xl mt-8 mb-2;
 }
 
 .markdown > h2 {
-  @apply font-semibold text-2xl mt-4 mb-2;
+  @apply font-semibold text-2xl mt-8 mb-2;
 }
 
 .markdown > h3 {
-  @apply font-semibold text-xl mt-4 mb-2;
+  @apply font-semibold text-xl mt-8 mb-2;
 }
 
 .markdown > h4 {
@@ -60,6 +60,10 @@
 
 .markdown hr {
   @apply mb-4;
+}
+
+.markdown blockquote {
+  @apply ml-0 pl-4 border-l-4 border-gray-200 text-gray-500 italic;
 }
 
 .markdown code.language-text {
