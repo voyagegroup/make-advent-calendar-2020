@@ -37,6 +37,7 @@ const IndexPage = () => {
     <Layout>
       <SEO title="Home" />
       <Head></Head>
+      <hr className="mt-4" />
       <section className="w-screen lg:w-5/6 px-6 py-8 grid grid-cols-1 lg:grid-flow-row lg:grid-cols-7 lg:grid-rows-5 gap-4">
         {[...new Array(2)].map((_, index) => (
           <article key={index} className="hidden lg:block p-4 rounded-md shadow-sm">
