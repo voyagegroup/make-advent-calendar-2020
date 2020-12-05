@@ -10,6 +10,9 @@ RUN apt-get update && \
       gcc-doc \
       make \
       build-essential \
+      curl \
+      imagemagick \
+      bc \
       && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
