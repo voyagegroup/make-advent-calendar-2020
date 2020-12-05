@@ -3,6 +3,7 @@ import { useStaticQuery, graphql, Link } from "gatsby"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+import Head from "../components/index/head"
 
 const IndexPage = () => {
   const result = useStaticQuery(graphql`
@@ -35,14 +36,7 @@ const IndexPage = () => {
   return (
     <Layout>
       <SEO title="Home" />
-      <section className="px-6 pt-6">
-        <p>GitHub</p>
-        <p className="text-xs text-gray-500">
-          <Link href="https://github.com/voyagegroup/make-advent-calendar-2020">
-            https://github.com/voyagegroup/make-advent-calendar-2020
-          </Link>
-        </p>
-      </section>
+      <Head></Head>
       <section className="w-screen lg:w-5/6 px-6 py-8 grid grid-cols-1 lg:grid-flow-row lg:grid-cols-7 lg:grid-rows-5 gap-4">
         {[...new Array(2)].map((_, index) => (
           <article key={index} className="hidden lg:block p-4 rounded-md shadow-sm">
