@@ -9,11 +9,11 @@ export default function Template(props) {
   const data = props.data
   const pageContext = props.pageContext
   const { markdownRemark } = data // data.markdownRemark holds your post data
-  const { frontmatter, html } = markdownRemark
+  const { frontmatter, html, excerpt } = markdownRemark
 
   return (
     <Layout>
-      <SEO title={frontmatter.title} />
+      <SEO title={frontmatter.title} description={excerpt} />
       <section className="w-full mx-auto grid grid-cols-12 grid-flow-col gap-4">
         <section className="col-span-2 lg:block hidden">
           <Sidebar nodes={ pageContext.nodes } />
@@ -39,6 +39,7 @@ export const pageQuery = graphql`
   query($slug: String!) {
     markdownRemark(frontmatter: { slug: { eq: $slug } }) {
       html
+      excerpt(format: PLAIN, pruneLength: 160, truncate: true)
       frontmatter {
         date(formatString: "MMMM DD, YYYY")
         slug
