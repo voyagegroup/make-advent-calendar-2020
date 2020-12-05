@@ -29,14 +29,14 @@ hello:
 ```
 
 この Makefile は変数 `MESSAGE` を出力します。この変数は make の変数で、実行時には既に展開された形になっています。
-```sh
+```shell
 $ make hello
 echo hello
 hello
 ```
 
 make の変数が便利なのは、実行時引数でこれを上書きできるところです。これによって Makefile に容易に拡張性を持たせられます。
-```sh
+```shell
 $ make hello MESSAGE=konnnichiwa
 echo konnnichiwa
 konnnichiwa
@@ -51,7 +51,7 @@ PYTHON = python
 py:
 	$(PYTHON) main.py
 ```
-```sh
+```shell
 $ make py
 python main.py
 psyche
@@ -96,7 +96,7 @@ $(greeting):
 $(greetings):
 	echo "greetings"
 ```
-```sh
+```shell
 $ make holla
 echo "greeting"
 greeting
@@ -151,7 +151,7 @@ b:
 ```
 
 このように immediate が変わらないのに対して、lazy が再評価されます。
-```sh
+```shell
 $ make test
 echo 1607153140 # immediate
 1607153140

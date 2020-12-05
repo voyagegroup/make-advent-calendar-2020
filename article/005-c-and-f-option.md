@@ -13,7 +13,7 @@ make は通常、カレントディレクトリの Makefile を実行します�
 ## -C
 
 `-C` オプションは Makefile のあるディレクトリを指定するオプションです。
-```sh
+```shell
 -C dir, --directory=dir
     Change to directory dir before reading the makefiles or doing anything else.
     If multiple -C options are specified, each is interpreted relative to the
@@ -35,7 +35,7 @@ touched:
 clean:
 	rm -rf touched
 ```
-```sh
+```shell
 $ pwd
 /work
 $ make -C example/005 all
@@ -52,7 +52,7 @@ make: Leaving directory '/work/example/005'
 ## -f
 
 `-f` は実行するファイル名を指定するオプションです。
-```sh
+```shell
 -f file, --file=file, --makefile=FILE
     Use file as a makefile.
 ```
@@ -77,7 +77,7 @@ clean:
 
 `-f` オプションはファイル名を指定するだけで、実行ディレクトリはカレントディレクトリのままです。
 そのため、相対パスで記述されているターゲットはカレントディレクトリに作成されます。
-```sh
+```shell
 $ pwd
 /tmp
 $ make -f /work/example/005/imagemagick.mk distortion.gif
@@ -91,7 +91,7 @@ $ ls /tmp/koala.gif /tmp/distortion.gif
 ```
 
 `-C` と `-f` は併用でき、対象ファイルが存在するディレクトリで実行したい場合はこのように併用します。基本的には併用することを前提にした方が考えることが減ってよいと思います。
-```sh
+```shell
 $ make -C /work/example/005 -f imagemagick.mk distortion.gif
 make: Entering directory '/work/example/005'
 convert koala.gif -virtual-pixel Black -define shepards:power=8.0 -distort Shepards '30,11 20,11  48,29 58,29' distortion.gif

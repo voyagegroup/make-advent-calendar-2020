@@ -30,7 +30,7 @@ main.o: main.c
 main.o: main.c
 	gcc -o $@ $^
 ```
-```sh
+```shell
 $ make main.o
 gcc -o main.o main.c
 $ ./main.o
@@ -47,7 +47,7 @@ main.2.o: main.c hoge
 hoge:
 	echo "do nothing"
 ```
-```sh
+```shell
 $ make main.2.o
 echo "do nothing"
 do nothing
@@ -61,7 +61,7 @@ make: *** [Makefile:5: main.2.o] Error 1
 main.3.o: main.c hoge
 	gcc -o $@ $<
 ```
-```sh
+```shell
 $ make main.3.o
 echo "do nothing"
 do nothing
@@ -78,7 +78,7 @@ bin/main.1.o: main.c
 	mkdir -p $(@D)
 	gcc -o $(@D)/$(@F) $<
 ```
-```sh
+```shell
 $ make bin/main.1.o
 mkdir -p bin
 gcc -o binmain.1.o main.c
@@ -93,7 +93,7 @@ bin/main.2.o: main.c bin
 bin:
 	mkdir $@
 ```
-```sh
+```shell
 $ make bin/main.2.o
 mkdir bin
 gcc -o bin/main.2.o main.c
