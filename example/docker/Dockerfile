@@ -10,6 +10,13 @@ RUN apt-get update && \
       gcc-doc \
       make \
       build-essential \
+      curl \
+      imagemagick \
+      bc \
+      python \
+      python3 \
+      python-pip \
+      python3-pip \
       && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
