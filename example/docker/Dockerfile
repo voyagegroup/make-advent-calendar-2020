@@ -13,6 +13,10 @@ RUN apt-get update && \
       curl \
       imagemagick \
       bc \
+      python \
+      python3 \
+      python-pip \
+      python3-pip \
       && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
