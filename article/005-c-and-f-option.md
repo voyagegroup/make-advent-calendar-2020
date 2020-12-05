@@ -102,4 +102,5 @@ make: Leaving directory '/work/example/005'
 * [https://www.gnu.org/software/make/manual/make.html#Makefile-Names](https://www.gnu.org/software/make/manual/make.html#Makefile-Names)
 
 ※1. 実際には GNUmakefile, makefile, Makefile の順に探査して最初に見つかったものを実行します。
+
 ※2. こういった Makefile を書き始めて休日を潰すことがまれによくある
