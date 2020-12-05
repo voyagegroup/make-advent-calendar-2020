@@ -58,9 +58,9 @@ make: Leaving directory '/work/example/005'
 ```
 
 目的に応じたファイルに Makefile を分割すると、メンテナンス性や可読性、使いやすさなどが上がります。
-拡張子には `.mk` をつけることが多く、例えば `ci.mk` `docker.mk` `test.mk` `integration-test.mk` といった具合にすることが多いです。
+拡張子には `.mk` をつけることが多く、例えば `ci.mk` `docker.mk` `test.mk` `integration-test.mk` といった具合にします。
 
-一例として [ImageMagick](https://imagemagick.org/) で遊ぶ `imagemagick.mk` です。
+これはその一例として [ImageMagick](https://imagemagick.org/) で遊ぶ `imagemagick.mk` です（※2）。
 ```makefile
 .PHONY: clean
 
@@ -75,8 +75,8 @@ clean:
 	rm -rf distortion.gif
 ```
 
-ファイル名を指定するだけで、実行ディレクトリはカレントディレクトリのままです。
-そのため、相対パスで記述されているターゲット（koala.gif, distotion.gif）はカレントディレクトリ（/tmp）に作成されます。
+`-f` オプションはファイル名を指定するだけで、実行ディレクトリはカレントディレクトリのままです。
+そのため、相対パスで記述されているターゲットはカレントディレクトリに作成されます。
 ```sh
 $ pwd
 /tmp
@@ -90,7 +90,7 @@ $ ls /tmp/koala.gif /tmp/distortion.gif
 /tmp/distortion.gif  /tmp/koala.gif
 ```
 
-`-C` と `-f` は併用でき、対象ファイルが存在するディレクトリで実行したい場合はこのように併用します。
+`-C` と `-f` は併用でき、対象ファイルが存在するディレクトリで実行したい場合はこのように併用します。基本的には併用することを前提にした方が考えることが減ってよいと思います。
 ```sh
 $ make -C /work/example/005 -f imagemagick.mk distortion.gif
 make: Entering directory '/work/example/005'
@@ -98,5 +98,8 @@ convert koala.gif -virtual-pixel Black -define shepards:power=8.0 -distort Shepa
 make: Leaving directory '/work/example/005'
 ```
 
+## リンク
+* [https://www.gnu.org/software/make/manual/make.html#Makefile-Names](https://www.gnu.org/software/make/manual/make.html#Makefile-Names)
 
-※1. GNUMakefile, makefile, Makefile の順に探査して最初に見つかったものを実行します。
+※1. 実際には GNUmakefile, makefile, Makefile の順に探査して最初に見つかったものを実行します。
+※2. こういった Makefile を書き始めて休日を潰すことがまれによくある
