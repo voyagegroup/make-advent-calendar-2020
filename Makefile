@@ -1,5 +1,4 @@
 .PHONY: help setup dependencies install develop build serve clean
-.PHONY: public
 
 help:
 	@cat $(firstword $(MAKEFILE_LIST))
@@ -31,4 +30,5 @@ node_modules:
 
 clean:
 	rm -rf .cache # https://github.com/gatsbyjs/gatsby/issues/13656#issuecomment-488374306
+	rm -rf public
 	rm -rf node_modules
