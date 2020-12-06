@@ -1,4 +1,6 @@
-#!/bin/sh -ex
+#!/bin/sh
+
+set -e
 
 test 0 = 0
 test 1 != 1 # would fail

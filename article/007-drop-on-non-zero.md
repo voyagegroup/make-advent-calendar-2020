@@ -35,23 +35,30 @@ make は基本的に 0 または 2 の終了ステータスを返します（[Ho
 ```shell
 $ man sh
 ...
--e errexit       If not interactive, exit immediately if any untested command fails.  The exit status of a command is considered to be explicitly tested if the command is used to control an if, elif, while, or until; or if the command is the left hand operand of an "&&" or "||" operator.
+-e errexit  If not interactive, exit immediately if any untested command fails.
+            The exit status of a command is considered to be explicitly tested
+            if the command is used to control an if, elif, while, or until; or
+            if the command is the left hand operand of an "&&" or "||" operator.
 
--x xtrace        Write each command to standard error (preceded by a '+ ') before it is executed.  Useful for debugging.
+-x xtrace   Write each command to standard error (preceded by a '+ ') before
+            it is executed.  Useful for debugging.
 ```
 
 実行したコマンドが non-zero ステータスで終了した場合に即座に終了する `-e` オプションと、シェルスクリプト内で実際に実行されたコマンドを表示する `-x` オプションをつけるのはシェルスクリプトを書く際によく使われるプラクティスのひとつです。
 
 これも十分有用ですが、しれっと実行を中断するので失敗に気づきにくいかもしれません。
 ```shell
-#!/bin/sh -ex
+#!/bin/sh
+
+set -e
 
 test 0 = 0
 test 1 != 1 # would fail
 test 2 = 2
 ```
 ```shell
-$ ./test.sh
+$ sh -x test.sh
++ set -e
 + test 0 = 0
 + test 1 != 1
 $ echo $?
