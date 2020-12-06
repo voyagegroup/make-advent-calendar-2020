@@ -1,0 +1,2 @@
+NAME := hoge
+HOGE := hoge
