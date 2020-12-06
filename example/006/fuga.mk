@@ -1,0 +1,2 @@
+NAME := fuga
+FUGA := fuga

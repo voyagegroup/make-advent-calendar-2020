@@ -39,6 +39,11 @@
   @apply text-blue-600;
 }
 
+.markdown a code,
+.markdown a code.language-text {
+  @apply text-blue-600;
+}
+
 .markdown > p {
   @apply mb-4;
 }
