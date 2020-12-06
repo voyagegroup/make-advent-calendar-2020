@@ -9,10 +9,7 @@ title: "終了ステータス"
 make はコマンドが non-zero なステータスで終了すると実行を中断します（[Errors in Recipes](https://www.gnu.org/software/make/manual/html_node/Errors.html)）。
 このため「下手に処理が進んでどこで失敗しているのか分からない」といった事になりにくいですし、異常系をあまり考えずにコマンドを書き連ねられます。
 ```makefile
-.PHONY: help test
-
-help:
-	@cat $(firstword $(MAKEFILE_LIST))
+.PHONY: test
 
 test:
 	test 0 = 0
@@ -23,7 +20,8 @@ test:
 $ make test
 test 0 = 0
 test 1 != 1 # would fail
-make: *** [Makefile:8: test] Error 1
+make: *** [Makefile:5: test] Error 1
+
 $ echo $?
 2
 ```

@@ -1,7 +1,4 @@
-.PHONY: help test build
-
-help:
-	@cat $(firstword $(MAKEFILE_LIST))
+.PHONY: test
 
 test:
 	test 0 = 0
