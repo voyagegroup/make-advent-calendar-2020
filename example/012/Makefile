@@ -1,4 +1,5 @@
 .PHONY: help clean
+.PRECIOUS: %.o
 
 help:
 	@cat $(firstword $(MAKEFILE_LIST))
