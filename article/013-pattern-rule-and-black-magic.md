@@ -109,4 +109,4 @@ docker-compose run --rm <service> <command>
 ```
 
 ## リンク
-* [https://www.gnu.org/software/make/manual/html_node/Pattern-Intro.html](https://www.gnu.org/software/make/manual/html_node/Pattern-Intro.html)
+* [https://tamakiii.hatenablog.com/entry/2020/04/14/005648](https://tamakiii.hatenablog.com/entry/2020/04/14/005648)
