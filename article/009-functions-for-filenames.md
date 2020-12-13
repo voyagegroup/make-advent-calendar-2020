@@ -7,7 +7,9 @@ title: "ファイル名の関数"
 # ファイル名の関数
 
 ファイル名に関する関数には `dir` や `notdir`、 `realpath`、 `abspath`、 `wildcard` などがあります。
-他にも `suffix` や `addsuffix` などもありますが、あまり使わないので必要に応じて調べて使うとよいと思います。
+
+他にも `suffix` や `addsuffix` などの便利な関数がありますが、あまり使わないので必要に応じて調べて使うとよいと思います。
+
 
 ## dir
 dir は `names...` からディレクトリ部分を取り出します。
@@ -15,7 +17,7 @@ dir は `names...` からディレクトリ部分を取り出します。
 $(dir names...)
 ```
 
-スラッシュ(/)を含まない場合は "./" を返します
+スラッシュ（`/`）を含まない場合は `./` を返します
 ```makefile
 dir:
 	echo $(dir src/main.c Makefile)
@@ -32,7 +34,7 @@ notdir は `names...` からディレクトリ部分を取り除いて返しま�
 $(notdir names...)
 ```
 
-スラッシュが含まない場合はそのまま返します。含む場合は、最後のスラッシュまでが削除されます。
+スラッシュを含まない場合はそのまま返します。含む場合は、最後のスラッシュまでが削除されます。
 ```makefile
 notdir:
 	echo $(notdir src/main.c Makefile)
@@ -44,7 +46,7 @@ main.c Makefile
 ```
 
 ## realpath
-realpath は `names...` の realpath を返します。失敗した場合は空の文字列を返します。
+realpath は `names...` の `realpath` を返します。失敗した場合は空の文字列を返します。
 ```makefile
 $(realpath names...)
 ```
