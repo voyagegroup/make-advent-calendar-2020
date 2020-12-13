@@ -44,7 +44,7 @@ hoge
 
 ## lastword
 lastword はリストの最後の要素を取り出します。
-リストの要素数が1の場合、firstword と同じ要素を返す点に注意が必要です。
+リストの要素数が1の場合、firstword と同じ要素を返すことに注意しましょう。
 ```makefile
 $(lastword names...)
 ```
