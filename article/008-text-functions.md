@@ -84,5 +84,5 @@ hoge
 凝ったことをしない限りこれに困らされることはありませんが、やはり特性にあった使い方をするのが大事かなと思います。
 
 ## リンク
+* [https://www.gnu.org/software/make/manual/html_node/Text-Functions.html](https://www.gnu.org/software/make/manual/html_node/Text-Functions.html)
 * [https://pubs.opengroup.org/onlinepubs/009604499/utilities/xcu_chap02.html#tag_02_06_02](https://pubs.opengroup.org/onlinepubs/009604499/utilities/xcu_chap02.html#tag_02_06_02)
-* [https://www.gnu.org/software/make/manual/make.html#Substitution-Refs](https://www.gnu.org/software/make/manual/make.html#Substitution-Refs)

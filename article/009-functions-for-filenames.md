@@ -102,5 +102,6 @@ hoge Makefile
 ```
 
 ## リンク
+- [https://www.gnu.org/software/make/manual/html_node/File-Name-Functions.html](https://www.gnu.org/software/make/manual/html_node/File-Name-Functions.html)
 - [https://github.com/mirror/make/blob/fcc11d05a60b061027a50b76d146c43306b20e32/src/function.c](https://github.com/mirror/make/blob/fcc11d05a60b061027a50b76d146c43306b20e32/src/function.c#L2227)
 - [https://github.com/mirror/make/blob/4.2.1/tests/scripts/functions/realpath](https://github.com/mirror/make/blob/4.2.1/tests/scripts/functions/realpath)
