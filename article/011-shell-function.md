@@ -128,5 +128,6 @@ Makefile fuga hoge list.txt
 ```
 
 ## リンク
+* [https://www.gnu.org/software/make/manual/html_node/Shell-Function.html](https://www.gnu.org/software/make/manual/html_node/Shell-Function.html)
 * [https://www.gnu.org/software/make/manual/html_node/Setting.html](https://www.gnu.org/software/make/manual/html_node/Setting.html)
 * [https://pubs.opengroup.org/onlinepubs/9699919799.2016edition/utilities/V3_chap02.html#tag_18_06_03](https://pubs.opengroup.org/onlinepubs/9699919799.2016edition/utilities/V3_chap02.html#tag_18_06_03)
