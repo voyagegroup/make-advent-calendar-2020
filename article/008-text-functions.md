@@ -19,7 +19,7 @@ $(subst from,to,text)
 
 ```makefile
 subst:
-	$(subst og,xx,hoge)
+	echo $(subst og,xx,hoge)
 ```
 ```shell
 $ make subst
@@ -28,7 +28,7 @@ hxxe
 ```
 
 ## patsubst
-patsbust は簡単なパターン置換する関数です。
+patsbust は簡単なパターン置換を行う関数です。
 ```makefile
 $(patsubst pattern,replacement,text)
 ```
@@ -36,7 +36,7 @@ $(patsubst pattern,replacement,text)
 `%` を含むパターンを置換します。
 ```makefile
 patsubst:
-	$(patsubst %.c %.o,%,main.c main.o)
+	echo $(patsubst %a,%,hoge fuga vaa)
 ```
 ```shell
 $ make patsubst
