@@ -133,6 +133,8 @@ clean:
 	docker-compose down -v
 	rm -rf .env
 ```
+
+README などで補足するのもよいと思います。使用頻度が高いものを Makefile に昇格させるようにすれば、それがメンテナンス性を考慮する機会になるはずです。
 ```markdown
 ## How to use
 ~~~sh
