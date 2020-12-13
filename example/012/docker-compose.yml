@@ -1,0 +1,13 @@
+version: "3.8"
+services:
+  database:
+    build:
+      context: .
+      target: ${TARGET:-production-pseudo}
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+    volumes:
+      - mysqldata:/var/lib/mysql
+
+volumes:
+  mysqldata:
